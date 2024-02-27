@@ -57,12 +57,10 @@
     }
 
     .info-icon {
-        right: 2%; /* Anpassen der Position für kleinere Bildschirme */
+        right: 2%;
         transform: translateX(50%);
     }
 }
-
-
 
 :root {
     --primary-color-dark: #000000;
@@ -102,16 +100,14 @@ body {
     background-color: var(--background-color);
     color: var(--primary-text-color);
     margin: 0;
-    /* Kein Seitenrand */
     padding: 0;
-    /* Kein Innenabstand */
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ändern Sie min-height zu 100vh */
+    min-height: 100vh;
     position: relative;
     flex-direction: column;
 }
@@ -127,19 +123,17 @@ body {
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 100%; /* Ändern Sie auch hier min-height zu 100% */
+    height: 100%;
 }
 
 
 .light-mode .container::after {
     background-color: rgba(255, 255, 255, 0.7);
-    /* Im Light-Modus Hintergrundfarbe des Bildes auf Weiß mit 70% Opazität setzen */
 }
 
 
 .dark-mode .container::after {
     background-color: rgba(0, 0, 0, 0.5);
-    /* Im Dark-Modus Hintergrundfarbe des Bildes auf Schwarz mit 50% Opazität setzen */
 }
 
 h1 {
@@ -154,8 +148,8 @@ h1 {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 90%; /* Maximale Breite des Wrappers */
-        margin: 20px; /* Abstand von oben und unten */
+    max-width: 90%;
+    margin: 20px;
 }
 
 
@@ -200,8 +194,6 @@ button:hover {
     color: white;
 }
 
-
-
 header {
     background-color: var(--header-background-color);
     color: #FFFFFF;
@@ -211,24 +203,21 @@ header {
     align-items: center;
 }
 
-
 .logo {
     flex: 1;
-    /* Flexibles Wachstum für Logo */
     text-align: left;
-    /* Logo links ausrichten */
 }
 
 .logo img {
     max-width: 200px;
 }
 
-/* Gemeinsame Stile für den Modusumschalter */
+
+/* Switch for Dark/Light-Mode */
 .mode-switch {
     flex: 1;
     text-align: right;
     font-size: 24px;
-    /* Größere Schriftgröße für bessere Erkennbarkeit */
 }
 
 .mode-switch input {
@@ -242,15 +231,11 @@ header {
     cursor: pointer;
     display: inline-block;
     width: 60px;
-    /* Größere Breite für bessere Erkennbarkeit */
     height: 30px;
-    /* Größere Höhe für bessere Erkennbarkeit */
     background-color: #ccc;
     transition: .4s;
     border-radius: 30px;
-    /* Abgerundete Ecken */
     padding: 5px;
-    /* Größeres Padding für den Abstand zu den Icons */
 }
 
 .mode-toggle:before {
@@ -276,25 +261,21 @@ header {
 .mode-toggle .fa-sun {
     right: 7px;
     display: none;
-    /* Sonne standardmäßig ausblenden */
     color: #333;
 }
 
 .mode-toggle .fa-moon {
     left: 5px;
     display: none;
-    /* Sonne standardmäßig ausblenden */
     color: white;
 }
 
 .light-mode .mode-toggle:before {
     left: 8px;
-    /* Positionierung des Knopfes relativ zur linken Seite */
 }
 
 .dark-mode .mode-toggle:before {
     left: calc(100% - 18px);
-    /* Positionierung des Knopfes relativ zur rechten Seite */
 }
 
 .light-mode .mode-toggle .fa-sun {
@@ -317,23 +298,21 @@ input:checked+.mode-toggle:before {
 
 .info-icon {
     cursor: pointer;
-    color: var(--primary-text-color); /* Farbe des Icons anpassen */
+    color: var(--primary-text-color);
     position: absolute;
     top: 20px;
     right: 5%;
     transform: translateX(50%);
-    transition: color 0.3s ease; /* Hinzufügen einer Farbübergangsanimation */
+    transition: color 0.3s ease;
 }
 
-/* Anpassungen für Dark Mode */
 .dark-mode .info-icon {
     color: var(--primary-text-color-dark);
 }
 
-/* Animation für Hover-Zustand des Informations-Icons */
 .info-icon:hover {
-    transform: scale(1.3); /* Vergrößern des Icons beim Hover */
-    color: #FF0000; /* Ändern der Farbe beim Hover */
+    transform: scale(1.3);
+    color: #FF0000;
 }
 
 /* Stil für das Popup-Fenster */
@@ -344,9 +323,9 @@ input:checked+.mode-toggle:before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Hintergrund abgedunkelt */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    box-shadow: 0 0 10px rgba(48, 47, 47, 0.5); /* Schattenfarbe im Popup anpassen */
+    box-shadow: 0 0 10px rgba(48, 47, 47, 0.5);
 }
 
 .popup-content {
@@ -358,16 +337,16 @@ input:checked+.mode-toggle:before {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 80%; /* Breite des Popups anpassen */
-    max-width: 600px; /* Maximalbreite des Popups festlegen */
+    width: 80%;
+    max-width: 600px;
 }
 
 /* Stil für das Popup-Fenster im Dark Mode */
 .dark-mode .popup-content {
-    background-color: var(--secondary-color-dark); /* Hintergrundfarbe im Dark Mode anpassen */
-    color: var(--primary-text-color-dark); /* Textfarbe im Popup anpassen */
-    border: 1px solid var(--hover-color-dark); /* Randfarbe im Popup anpassen */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Schattenfarbe im Popup anpassen */
+    background-color: var(--secondary-color-dark); 
+    color: var(--primary-text-color-dark); 
+    border: 1px solid var(--hover-color-dark);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .popup-content .close {
@@ -376,12 +355,12 @@ input:checked+.mode-toggle:before {
     right: 10px;
     cursor: pointer;
     font-size: 24px;
-    color: var(--primary-text-color); /* Farbe anpassen */
+    color: var(--primary-text-color);
 }
 
 .popup-content .close:hover {
-    transform: scale(1.3); /* Vergrößern des Icons beim Hover */
-    color: #FF0000; /* Ändern der Farbe beim Hover */
+    transform: scale(1.3); 
+    color: #FF0000;
 }
 
 .popup-content h2 {

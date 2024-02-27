@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teamfindungsanwendung</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +30,7 @@
         <div class="wrapper">
             <div class="info-icon" onclick="togglePopup()"><i class="fas fa-info-circle"></i></div>
             <h1>Teamfindungsanwendung</h1>
+            <!-- Formular -->
             <form id="teamForm"> 
                 <label for="accessKey">Zugangsschlüssel:</label>
                 <input type="text" id="accessKey" name="accessKey" required><br>
@@ -37,9 +38,6 @@
                 <input type="text" id="studentName" name="studentName" required><br>
                 <button type="submit">Registrieren</button>
             </form>
-            
-            <div id="preferencesForm" style="display: none;">
-            </div>
             <!-- Popup-Fenster -->
             <div class="popup" id="popup">
                 <div class="popup-content">
@@ -59,7 +57,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

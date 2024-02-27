@@ -1,6 +1,5 @@
 const modeSwitch = document.getElementById('modeSwitch');
 
-// Beim Laden der Seite überprüfen, ob der Benutzer einen bevorzugten Modus hat
 window.addEventListener('load', () => {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     setMode(isDarkMode);

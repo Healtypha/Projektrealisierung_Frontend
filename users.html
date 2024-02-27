@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrierte Benutzer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/users.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,17 +33,7 @@
             <div id="userNameBox"></div>
         </div>
     </div>
-    <script>
-        // Den Benutzernamen aus dem localStorage abrufen und anzeigen
-        const userName = localStorage.getItem('studentName');
-        const userNameBox = document.getElementById('userNameBox');
-        if (userName) {
-            userNameBox.textContent = "Willkommen, " + userName + "!";
-        }
-    </script>
-
-    <script src="script.js"></script>
-    <script src="users.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
