@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamfindungsanwendung</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-mode">
+    <header>
+        <div class="logo">
+            <img src="img/dhbw_logo.png" alt="Logo">
+        </div>
+        <div class="mode-switch">
+            <input type="checkbox" id="modeSwitch" checked>
+            <label for="modeSwitch" class="mode-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </label>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="info-icon" onclick="togglePopup()"><i class="fas fa-info-circle"></i></div>
+            <h1>Teamfindungsanwendung</h1>
+            <form id="teamForm"> 
+                <label for="accessKey">Zugangsschlüssel:</label>
+                <input type="text" id="accessKey" name="accessKey" required><br>
+                <label for="studentName">Dein Name:</label>
+                <input type="text" id="studentName" name="studentName" required><br>
+                <button type="submit">Registrieren</button>
+            </form>
+            
+            <div id="preferencesForm" style="display: none;">
+            </div>
+            <!-- Popup-Fenster -->
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="togglePopup()">&times;</span>
+                    <h2>Anleitung zur Teamfindungsanwendung</h2>
+                    <p>Diese Anwendung erleichtert die Gruppenbildung für Projekte und Veranstaltungen. Hier ist eine kurze Anleitung, wie Sie die Anwendung verwenden:</p>
+                    <ol class="instructions-list">
+                        <li><span class="bullet">1</span> Geben Sie den <span style="color:#FF0000;">Zugangsschlüssel </span> ein, den der/die Dozent/-in bereitgestellt hat.</li>
+                        <li><span class="bullet">2</span> Registrieren Sie Ihren <span style="color:#FF0000;">Namen</span>.</li>
+                        <li><span class="bullet">3</span> Sobald alle Namen registriert sind, wird die Gruppenbildung von dem/der Dozenten/-in freigegeben.</li>
+                        <li><span class="bullet">4</span> Geben Sie Ihre Präferenzen für die Gruppenbildung ab.</li>
+                        <li><span class="bullet">5</span> Die Anwendung bildet die Gruppen automatisch und gibt das Ergebnis bekannt.</li>
+                    </ol>
+                    <p class="instructions">Bitte beachten Sie, dass Ihre Daten und Präferenzen sicher und vertraulich behandelt werden. Viel Spaß beim Verwenden der Teamfindungsanwendung!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

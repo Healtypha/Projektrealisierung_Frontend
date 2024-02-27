@@ -1,0 +1,433 @@
+/* Anpassungen für Tablets und kleine Desktops (max. Breite: 768px) */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .wrapper {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 8px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .info-icon {
+        right: 5%;
+    }
+}
+
+/* Anpassungen für Mobilgeräte (max. Breite: 576px) */
+@media screen and (max-width: 576px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .wrapper {
+        padding: 10px;
+        margin: 0;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 6px;
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .info-icon {
+        right: 2%; /* Anpassen der Position für kleinere Bildschirme */
+        transform: translateX(50%);
+    }
+}
+
+
+
+:root {
+    --primary-color-dark: #000000;
+    --secondary-color-dark: #212121;
+    --thrid-color-dark: #303030;
+    --fourth-color-dark: #424242;
+    --primary-text-color-dark: #E4E6EB;
+    --secondary-text-color-dark: #B0B3B8;
+
+    --primary-color-light: #FFFFFF;
+    --secondary-color-light: #F0F0F0;
+    --primary-text-color-light: #242526;
+    --secondary-text-color-light: #6E7072;
+    --hover-color-light: #CCCCCC;
+}
+
+.light-mode {
+    --background-color: var(--primary-color-light);
+    --container-color: var(--secondary-color-light);
+    --primary-text-color: var(--primary-text-color-light);
+    --secondary-text-color: var(--secondary-text-color-light);
+    --hover-color: var(--hover-color-light);
+    --header-background-color: var(--secondary-color-light);
+}
+
+.dark-mode {
+    --background-color: var(--primary-color-dark);
+    --container-color: var(--secondary-color-dark);
+    --primary-text-color: var(--primary-text-color-dark);
+    --secondary-text-color: var(--secondary-text-color-dark);
+    --hover-color: var(--thrid-color-dark);
+    --header-background-color: var(--secondary-color-dark);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    /* Kein Seitenrand */
+    padding: 0;
+    /* Kein Innenabstand */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ändern Sie min-height zu 100vh */
+    position: relative;
+    flex-direction: column;
+}
+
+.container::after {
+    content: "";
+    background-image: url("img/dhbw_mannheim.jpg");
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%; /* Ändern Sie auch hier min-height zu 100% */
+}
+
+
+.light-mode .container::after {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Im Light-Modus Hintergrundfarbe des Bildes auf Weiß mit 70% Opazität setzen */
+}
+
+
+.dark-mode .container::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Im Dark-Modus Hintergrundfarbe des Bildes auf Schwarz mit 50% Opazität setzen */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    text-align: center;
+    position: relative;
+    background-color: var(--container-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Maximale Breite des Wrappers */
+        margin: 20px; /* Abstand von oben und unten */
+}
+
+
+form {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 2px solid var(--secondary-text-color);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--hover-color);
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid #FF0000;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #FF0000;
+    color: white;
+}
+
+
+
+header {
+    background-color: var(--header-background-color);
+    color: #FFFFFF;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    flex: 1;
+    /* Flexibles Wachstum für Logo */
+    text-align: left;
+    /* Logo links ausrichten */
+}
+
+.logo img {
+    max-width: 200px;
+}
+
+/* Gemeinsame Stile für den Modusumschalter */
+.mode-switch {
+    flex: 1;
+    text-align: right;
+    font-size: 24px;
+    /* Größere Schriftgröße für bessere Erkennbarkeit */
+}
+
+.mode-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mode-toggle {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 60px;
+    /* Größere Breite für bessere Erkennbarkeit */
+    height: 30px;
+    /* Größere Höhe für bessere Erkennbarkeit */
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+    /* Abgerundete Ecken */
+    padding: 5px;
+    /* Größeres Padding für den Abstand zu den Icons */
+}
+
+.mode-toggle:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.mode-toggle i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    color: #000;
+}
+
+.mode-toggle .fa-sun {
+    right: 7px;
+    display: none;
+    /* Sonne standardmäßig ausblenden */
+    color: #333;
+}
+
+.mode-toggle .fa-moon {
+    left: 5px;
+    display: none;
+    /* Sonne standardmäßig ausblenden */
+    color: white;
+}
+
+.light-mode .mode-toggle:before {
+    left: 8px;
+    /* Positionierung des Knopfes relativ zur linken Seite */
+}
+
+.dark-mode .mode-toggle:before {
+    left: calc(100% - 18px);
+    /* Positionierung des Knopfes relativ zur rechten Seite */
+}
+
+.light-mode .mode-toggle .fa-sun {
+    display: inline-block;
+}
+
+.dark-mode .mode-toggle .fa-moon {
+    display: inline-block;
+}
+
+input:checked+.mode-toggle {
+    background-color: #FF0000;
+}
+
+
+input:checked+.mode-toggle:before {
+    background-color: #808080;
+    left: calc(100% - 25px);
+}
+
+.info-icon {
+    cursor: pointer;
+    color: var(--primary-text-color); /* Farbe des Icons anpassen */
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    transform: translateX(50%);
+    transition: color 0.3s ease; /* Hinzufügen einer Farbübergangsanimation */
+}
+
+/* Anpassungen für Dark Mode */
+.dark-mode .info-icon {
+    color: var(--primary-text-color-dark);
+}
+
+/* Animation für Hover-Zustand des Informations-Icons */
+.info-icon:hover {
+    transform: scale(1.3); /* Vergrößern des Icons beim Hover */
+    color: #FF0000; /* Ändern der Farbe beim Hover */
+}
+
+/* Stil für das Popup-Fenster */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Hintergrund abgedunkelt */
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(48, 47, 47, 0.5); /* Schattenfarbe im Popup anpassen */
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%; /* Breite des Popups anpassen */
+    max-width: 600px; /* Maximalbreite des Popups festlegen */
+}
+
+/* Stil für das Popup-Fenster im Dark Mode */
+.dark-mode .popup-content {
+    background-color: var(--secondary-color-dark); /* Hintergrundfarbe im Dark Mode anpassen */
+    color: var(--primary-text-color-dark); /* Textfarbe im Popup anpassen */
+    border: 1px solid var(--hover-color-dark); /* Randfarbe im Popup anpassen */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Schattenfarbe im Popup anpassen */
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--primary-text-color); /* Farbe anpassen */
+}
+
+.popup-content .close:hover {
+    transform: scale(1.3); /* Vergrößern des Icons beim Hover */
+    color: #FF0000; /* Ändern der Farbe beim Hover */
+}
+
+.popup-content h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* CSS für die Aufzählung */
+.instructions-list {
+    list-style-type: none;
+    counter-reset: list-counter;
+    padding-left: 0;
+}
+
+.instructions-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.instructions-list .bullet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #FF0000;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.popup-content p.instructions {
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
+}
+
